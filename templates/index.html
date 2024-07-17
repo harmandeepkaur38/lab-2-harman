@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fish Species Prediction</title>
+    <style>
+body {
+    font-family: Arial, sans-serif;
+}
+
+.container {
+    width: 300px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    box-shadow: 2px 2px 12px rgba(0,0,0,0.1);
+    margin-top: 50px;
+}
+
+h2 {
+    text-align: center;
+}
+
+label {
+    display: block;
+    margin-top: 10px;
+}
+
+input[type="text"] {
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+    box-sizing: border-box;
+}
+
+button {
+    width: 100%;
+    padding: 10px;
+    margin-top: 15px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+h3 {
+    text-align: center;
+    color: #4CAF50;
+}
+
+
+</style>
+</head>
+<body>
+    <div class="container">
+<center>
+        <h2>Fish Species Prediction</h2>
+        <form action="/predict" method="post">
+            <label for="Weight">Weight:</label>
+            <input type="text" id="Weight" name="Weight" required><br>
+
+            <label for="Length1">Length1:</label>
+            <input type="text" id="Length1" name="Length1" required><br>
+
+            <label for="Length2">Length2:</label>
+            <input type="text" id="Length2" name="Length2" required><br>
+
+            <label for="Length3">Length3:</label>
+            <input type="text" id="Length3" name="Length3" required><br>
+
+            <label for="Height">Height:</label>
+            <input type="text" id="Height" name="Height" required><br>
+
+            <label for="Width">Width:</label>
+            <input type="text" id="Width" name="Width" required><br>
+
+            <button type="submit">Predict Species</button>
+        </form>
+
+        {% if prediction_text %}
+        <h3>{{ prediction_text }}</h3>
+        {% endif %}
+</center>    
+</div>
+</body>
+</html>
